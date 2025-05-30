@@ -1,9 +1,11 @@
 import cv2
 import tempfile
-def get_frames_from_video(video_path) -> list:
+def get_frames_from_video_st(video_file) -> list:
     # Create a VideoCapture object and read from input file
-    cap = cv2.VideoCapture(video_path)
+    tfile = tempfile.NamedTemporaryFile(delete=False)
+    tfile.write(video_file.read())
 
+    cap = cv2.VideoCapture(tfile.name)
 
     # Check if camera opened successfully
     if not cap.isOpened():
