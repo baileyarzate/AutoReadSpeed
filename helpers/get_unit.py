@@ -9,5 +9,6 @@ def get_unit(l1: list) -> str:
             break
         
     if unit is None:
-        unit = 'No unit has been found'
+        #default to MPH
+        unit = 'MPH'
     return unit
