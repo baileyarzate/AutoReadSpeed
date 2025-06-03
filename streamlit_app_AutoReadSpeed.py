@@ -23,15 +23,9 @@ warnings.filterwarnings("ignore", message=".*pin_memory.*")
 
 @st.cache_resource
 def load_reader():
-    try:
-        user_dir = os.path.expanduser("~")
-        model_storage = os.path.join(user_dir, ".streamlit_easyocr")
-        os.makedirs(model_storage, exist_ok=True)
-
-        return easyocr.Reader(['en'], model_storage_directory=model_storage)
-    except Exception as e:
-        st.error(f"Failed to load EasyOCR model: {e}")
-        return None
+    model_dir = os.path.join(os.getcwd(), '.easyocr_models')
+    os.makedirs(model_dir, exist_ok=True)
+    return easyocr.Reader(['en'], gpu=False, model_storage_directory=model_dir)
 
 reader = load_reader()
 
@@ -69,7 +63,10 @@ if video and every_how_many_seconds and st.button("Generate Tabular Output"):
     if fastgood_slowbad == "Slow & Accurate":
         for idx in frame_indices:
             frame = frames[idx]
-            values.append(get_values(reader.readtext(frame)))
+            try:
+                values.append(get_values(reader.readtext(frame)))
+            except:
+                values.append(['error','error'])
             rel_timestamps.append(timestamp_secs[idx])
             del frame
             gc.collect()
