@@ -6,6 +6,7 @@ import pandas as pd
 import torch
 import warnings
 import gc
+import os
 import pytesseract
 #helper functions
 from helpers.get_frames_from_video_st import get_frames_from_video_st
@@ -23,7 +24,11 @@ warnings.filterwarnings("ignore", message=".*pin_memory.*")
 @st.cache_resource
 def load_reader():
     try:
-        return easyocr.Reader(['en'])
+        user_dir = os.path.expanduser("~")
+        model_storage = os.path.join(user_dir, ".streamlit_easyocr")
+        os.makedirs(model_storage, exist_ok=True)
+
+        return easyocr.Reader(['en'], model_storage_directory=model_storage)
     except Exception as e:
         st.error(f"Failed to load EasyOCR model: {e}")
         return None
