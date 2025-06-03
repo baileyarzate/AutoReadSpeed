@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 def _write_statistics_(df: pd.DataFrame) -> None:
     st.write(f"Minimum Speed: {min(df['Speed']):.0f} {df['Unit'].iloc[0]}")
     st.write(f"Maximum Speed: {max(df['Speed']):.0f} {df['Unit'].iloc[0]}")
