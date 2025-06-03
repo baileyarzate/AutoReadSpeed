@@ -17,8 +17,21 @@ from helpers.write_statistics import _write_statistics_
 
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe' 
 warnings.filterwarnings("ignore", message=".*pin_memory.*")
-use_gpu = torch.cuda.is_available() 
-reader = easyocr.Reader(['en'], gpu=use_gpu)
+#use_gpu = torch.cuda.is_available() 
+#reader = easyocr.Reader(['en'], gpu=use_gpu)
+
+@st.cache_resource
+def load_reader():
+    try:
+        return easyocr.Reader(['en'])
+    except Exception as e:
+        st.error(f"Failed to load EasyOCR model: {e}")
+        return None
+
+reader = load_reader()
+
+if reader is None:
+    st.stop()
 
 @st.cache_data
 def __cache__():
