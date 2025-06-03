@@ -6,7 +6,7 @@ def _write_statistics_(df: pd.DataFrame) -> None:
     st.write(f"Maximum Speed: {max(df['Speed']):.0f} {df['Unit'].iloc[0]}")
     st.write(f"Mean Speed: {np.mean(df['Speed']):.2f} {df['Unit'].iloc[0]}")
     st.write(f"Median Speed: {np.median(df['Speed']):.1f} {df['Unit'].iloc[0]}")
-    st.write(f"Variance Speed: {np.var(df['Speed']):.2f} {df['Unit'].iloc[0]}")
+    st.write(f"Standard Deviation Speed: {np.var(df['Speed'])**(1/2):.2f} {df['Unit'].iloc[0]}")
     st.write(f"Total Duration: {df["Elapsed_Time"].iloc[-1] - df["Elapsed_Time"].iloc[0]:.2f} seconds")
     speed = df["Speed"].to_numpy()
     time = df["Elapsed_Time"].to_numpy()
