@@ -19,18 +19,6 @@ AutoReadSpeed is a Streamlit-based app that uses computer vision and OCR to extr
 
 ---
 
-## 🛠️ Primary Technologies Used
-
-- Python 3.x
-- Streamlit
-- OpenCV
-- EasyOCR
-- Pytesseract
-- NumPy
-- Pandas
-
----
-
 ## 🚀 How to Run
 
 ### 1. Clone the repo
