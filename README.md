@@ -43,6 +43,8 @@ pip install -r requirements.txt
 streamlit run streamlit_app_AutoReadSpeed.py
 ```
 
+---
+
 📂 Output
 The app generates:
 - A .xlsx file with timestamps and detected speed values
