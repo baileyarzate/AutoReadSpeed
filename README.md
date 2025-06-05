@@ -4,7 +4,8 @@ AutoReadSpeed is a Streamlit-based app that uses computer vision and OCR to extr
 
 ---
 
-## ![Demo](sample_videos/demo.gif)
+## Demo
+![Demo](sample_videos/demo.gif)
 
 ---
 
