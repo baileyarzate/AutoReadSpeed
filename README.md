@@ -4,6 +4,10 @@ AutoReadSpeed is a Streamlit-based app that uses computer vision and OCR to extr
 
 ---
 
+## ![Demo](sample_videos/demo.gif)
+
+---
+
 ## 🧠 Features
 
 - 📹 Upload a video of a speedometer
@@ -54,10 +58,6 @@ streamlit run streamlit_app_AutoReadSpeed.py
 The app generates:
 - A .xlsx file with timestamps and detected speed values
 - Line plots showing speed over time
-
-📸 VIDEO & SCREENSHOTS
-- TODO: ADD VIDEO
-- TODO: ADD SCREENSHOTS (Streamlit interface, example output, example plots)
 
 🧪 Future Improvements
 - Support for analog odometer detection (via dial or needle tracking)
