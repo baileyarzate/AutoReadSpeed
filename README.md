@@ -45,8 +45,7 @@ streamlit run streamlit_app_AutoReadSpeed.py
 
 ---
 
-📂 Output
-The app generates:
+📂 Outputs
 - A .xlsx file with timestamps and detected speed values
 - Line plots showing speed over time
 
@@ -59,7 +58,7 @@ The app generates:
 - Optional video playback with overlayed speed values
 
 📄 License
-This project is licensed under the MIT License.
+- This project is licensed under the MIT License.
 
 🙋‍♀️ About the Author
-Created by @baileyarzate, a Data Scientist working for the U.S. Air Force as a civil servant with a passion for machine learning, vision systems, and intelligent automation.
+- Created by @baileyarzate, a Data Scientist working for the U.S. Air Force as a civil servant with a passion for machine learning, vision systems, and intelligent automation.
